@@ -1,0 +1,14 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: dental-practice-sql
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "${MSSQL_SA_PASSWORD:?Set MSSQL_SA_PASSWORD in your local .env file}"
+    ports:
+      - "1433:1433"
+    volumes:
+      - dental_sql_data:/var/opt/mssql
+
+volumes:
+  dental_sql_data:

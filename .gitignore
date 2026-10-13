@@ -1,0 +1,46 @@
+# .NET
+**/bin/
+**/obj/
+*.user
+*.suo
+.vs/
+
+# Angular / Node
+**/node_modules/
+**/dist/
+.angular/
+npm-debug.log*
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+appsettings.Production.json
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test output, local caches and database backups
+**/test-results/
+**/playwright-report/
+**/artifacts/
+**/__pycache__/
+*.pyc
+*.tsbuildinfo
+*.bak
+*.mdf
+*.ldf
+*.pfx
+*.p12
+
+# Runtime user uploads
+**/App_Data/ProfilePictures/
+**/App_Data/DevelopmentInbox/
