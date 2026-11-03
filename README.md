@@ -41,6 +41,10 @@ Suggested walkthrough: sign in as Patient, book a consultation, simulate a faile
 
 The demo stores fictional data in browser localStorage. Authentication, payments, recovery requests and document metadata are simulated; it makes no backend requests. Role checks demonstrate the interface and are not a security boundary. Use fictional information only.
 
+## Optional public demo hosting
+
+A static hosting configuration for the **fictional-data React demonstration only** is provided in [the hosting guide](docs/STATIC_DEMO_HOSTING.md). It has not been published by this repository update; review image rights, client permissions and the demo's simulated-data limitations before making it public.
+
 ## Features and implementation
 
 | Area | React demo | Angular + .NET application |
