@@ -1,0 +1,22 @@
+# Portfolio-only hosting configuration for the independent React mock-data demonstration.
+# This does NOT deploy the Angular + ASP.NET Core patient portal or store patient records.
+[build]
+  base = "frontend/dentalcare-react"
+  command = "npm ci && npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "24"
+
+# React Router uses BrowserRouter and requires an SPA history fallback.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"
