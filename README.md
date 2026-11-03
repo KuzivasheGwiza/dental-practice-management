@@ -1,6 +1,8 @@
 # Dental Practice Management & Patient Portal
 
-A portfolio project for a dental practice: patients book and manage appointments, reception manages the calendar and payments, and administrators configure services, staff and availability.
+**Client project in development for a dental surgeon in Zimbabwe.** The practice's reported appointment process requires patients to visit reception in person to arrange consultations, make payments and receive a return date. This project aims to make services discoverable online and let patients book consultations, view upcoming appointments and revisit information, and use supported electronic payments, while staff manage schedules and practice operations. This describes the specific client's problem, not all healthcare practices in Zimbabwe.
+
+**Status:** under development; neither the demo nor the full-stack implementation should be treated as a deployed clinical service. Payment-provider eligibility and settlement arrangements in Zimbabwe require verification before launch.
 
 The repository includes two applications. The **React demo** is the fastest way to explore the experience without a database. The **Angular + ASP.NET Core application** implements server authentication, SQL Server persistence, booking transactions and payment-provider integration.
 
@@ -51,6 +53,14 @@ The demo stores fictional data in browser localStorage. Authentication, payments
 | Payments | Simulated outcomes, payment records and refunds | Cash records, PayFast checkout/ITN validation, expiring holds and refund ledger |
 | Notifications | Mock updates and preferences | SMTP integration, queued notifications and development inbox |
 
+## My role and business context
+
+I am developing this platform for a dental surgeon in Zimbabwe, translating receptionist-led booking and follow-up workflows into patient and staff interfaces and backend business rules. The **React application is an independent fictional-data demonstration**; the **Angular + ASP.NET Core application** is the connected server/database implementation.
+
+My hands-on API verification uses **manual Swagger UI testing**. The repository also contains automated-test code and CI workflows; their presence does not mean I personally wrote or ran those tests.
+
+See the [client problem-to-solution case study](docs/CASE_STUDY.md), [architecture and boundaries](docs/PORTFOLIO_ARCHITECTURE.md) and [safe demonstration plan](docs/PORTFOLIO_DEMO.md).
+
 ## Engineering highlights
 
 - Booking rules account for working hours, appointment duration, dentist availability, leave and existing reservations.
@@ -58,7 +68,7 @@ The demo stores fictional data in browser localStorage. Authentication, payments
 - PayFast confirmation uses validated server notifications; pending holds expire and the payment service handles duplicate notifications.
 - Profile pictures use authenticated endpoints, size limits, file-signature validation and storage outside the public web root.
 - React domain models and service adapters separate UI behavior from mock persistence.
-- Automated tests exercise booking conflicts, payment retry/expiry, staff workflows, mobile layouts and selected accessibility checks.
+- The repository contains automated-test tooling for booking conflicts, payment retries and staff workflows; my stated hands-on API testing was manual Swagger UI testing.
 
 ## Architecture
 
@@ -159,7 +169,7 @@ Build Angular from `frontend/dental-practice-ui` with `npm run build`. GitHub Ac
 
 ## Scope and remaining work
 
-This is a portfolio and development project. The React demo supports fictional walkthroughs; the full-stack application needs deployment configuration and further review before live patient use.
+This is a client project in development with a separate fictional-data React portfolio demonstration. The React demo supports fictional walkthroughs; the full-stack application needs deployment configuration and further review before live patient use.
 
 - Clinical records, medical-aid claims, telehealth and automated provider refunds are outside the API's scope. React intake and document screens use fictional text and metadata only.
 - The API uses schema creation and supplied SQL upgrades rather than an EF migration history.
