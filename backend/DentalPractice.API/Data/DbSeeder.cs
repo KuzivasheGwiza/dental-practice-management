@@ -85,7 +85,9 @@ public static class DbSeeder
         await db.SaveChangesAsync();
 
         var hostEnvironment = services.GetRequiredService<IHostEnvironment>();
-        var seedDemoUsers = hostEnvironment.IsDevelopment() || configuration.GetValue<bool>("SeedData:EnableDemoUsers");
+        // Never create public demonstration accounts outside the Development environment.
+        // Production and staging users must be provisioned through a separate, reviewed process.
+        var seedDemoUsers = hostEnvironment.IsDevelopment();
         if (!seedDemoUsers)
             return;
 
