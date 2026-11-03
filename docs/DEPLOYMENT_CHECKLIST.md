@@ -59,4 +59,4 @@
 - Include `App_Data/ProfilePictures` in encrypted backup and restore tests.
 - Do not expose `App_Data` directly through the web server.
 - Confirm the production JWT signing key is not the repository placeholder; the API now refuses to start in Production with the placeholder key.
-- Confirm demo users are not enabled in Production unless `SeedData:EnableDemoUsers=true` was intentionally set for a non-live environment.
+- Demo staff accounts are seeded **only in Development**. `SeedData:EnableDemoUsers` no longer overrides this safety boundary; provision real staff accounts through a separately reviewed onboarding process.
